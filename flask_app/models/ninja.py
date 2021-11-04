@@ -31,9 +31,11 @@ class Ninja:
 
 
     @classmethod
-    def getdojo(cls, Num):
-        query = "SELECT * FROM ninjas Where dojos_id = Num;"
+    def getdojo(cls, dojos_id):
+        print (dojos_id)
+        query = "SELECT * FROM ninjas Where dojos_id = "+str(dojos_id)+';'
         results = connectToMySQL('dojos_and_ninjas').query_db(query)
+        print(results)
         ninjas= []
         for ninja in results:
             ninjas.append( cls(ninja) )

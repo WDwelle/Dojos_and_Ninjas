@@ -35,7 +35,7 @@ def create_ninja():
 
 @app.route('/<int:dojos_id>/')
 def show_ninjas(dojos_id):
-    ninjas = Ninja.getall()
+    ninjas = Ninja.getdojo(dojos_id)
     print(ninjas)
     return render_template("ninjas.html", all_ninjas = ninjas)
 
